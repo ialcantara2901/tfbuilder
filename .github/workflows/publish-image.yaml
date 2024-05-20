@@ -1,13 +1,13 @@
 name: Publish image docker hub
 on:
-  [worflow_dispatch]
+  [workflow_dispatch]
 
 jobs:
   publish_image:
     runs-on: ubuntu-latest
     steps:
-      - name: tfbuilder
-        uses: actions/
+      - name: checkout
+        uses: actions/checkout@v4
       - name: build
         run: |
           docker build . -t igoralcantara/tfbuilder:0.50
