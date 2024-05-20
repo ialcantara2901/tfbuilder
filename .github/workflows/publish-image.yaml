@@ -1,6 +1,8 @@
 name: Publish image docker hub
 on:
-  [workflow_dispatch]
+  push:
+    branches:
+      - 'main'
 
 jobs:
   publish_image:
@@ -10,8 +12,8 @@ jobs:
         uses: actions/checkout@v4
       - name: build
         run: |
-          docker build . -t igoralcantara/tfbuilder:0.51
+          docker build . -t igoralcantara/tfbuilder:0.50
       - name: publish
         run: |
           docker login -u igoralcantara -p ${{ secrets.DOCKER_HUB_TOKEN }}
-          docker push igoralcantara/tfbuilder:0.51
+          docker push igoralcantara/tfbuilder:0.50
