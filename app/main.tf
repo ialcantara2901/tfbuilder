@@ -31,9 +31,9 @@ module "tunnel_route" {
   cloudflare_tunnel_cname = module.tunnel.cloudflare_tunnel_cname
 }
 
-module "tunnel_deploy" {
-  source                  = "./modules/tunnel_deploy"
-}
+#module "tunnel_deploy" {
+#  source                  = "./modules/tunnel_deploy"
+#}
 
 module "worker" {
   source                  = "./modules/worker"
