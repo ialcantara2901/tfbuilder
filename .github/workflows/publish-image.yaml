@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: tfbuilder
-        uses: actions/
+        uses: actions/tfbuilder@0.50
       - name: build
         run: |
           docker build . -t igoralcantara/tfbuilder:0.50
