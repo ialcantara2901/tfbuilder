@@ -1,0 +1,15 @@
+version: '3.9'
+
+networks:
+  minha_rede:
+    external: true
+
+services:
+  cftunnel:
+    image: cloudflare/cloudflared:2023.2.1
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN=${tunnel_token}
+    command: tunnel --no-autoupdate run
+    networks:
+      - minha_rede
