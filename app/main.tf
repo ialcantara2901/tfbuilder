@@ -22,7 +22,7 @@ module "tunnel" {
   cloudflare_account_id   = var.cloudflare_account_id
   cloudflare_sys          = var.cloudflare_sys
 }
-
+/*
 module "tunnel_route" {
   source                  = "./modules/tunnel_route"
   cloudflare_account_id   = var.cloudflare_account_id
@@ -31,9 +31,10 @@ module "tunnel_route" {
   cloudflare_tunnel_cname = module.tunnel.cloudflare_tunnel_cname
 }
 
-#module "tunnel_deploy" {
-#  source                  = "./modules/tunnel_deploy"
-#}
+
+module "tunnel_deploy" {
+  source                  = "./modules/tunnel_deploy"
+}
 
 module "worker" {
   source                  = "./modules/worker"
@@ -66,3 +67,4 @@ module "email_record" {
   cloudflare_worker_rote  = var.cloudflare_worker_rote
   cloudflare_worker_url   = var.cloudflare_worker_url
 }
+*/

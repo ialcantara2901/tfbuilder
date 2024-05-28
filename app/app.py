@@ -50,13 +50,15 @@ def callback(body):
         os.system("./terraform init -upgrade")
         os.system("./terraform plan")
         os.system("./terraform apply -auto-approve")
-        output = os.system("./terraform output module.zone.name_servers")
+        dns = os.system("./terraform output name_servers")
+        tunnelId = os.system("./terraform output cloudflare_tunnel_id")
 
         # Criar a mensagem de saída
         output_message = {
             "domain": message.domain,
-            "output": output
-        }   
+            "tunnelId": tunnelId,
+            "dns": dns
+        }
 
     if message['tf'] == "destroy":
         # Executar o Terraform
