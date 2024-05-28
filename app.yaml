@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   terraform_app:
-    image: igoralcantara/tfbuilder:0.50
+    image: igoralcantara/tfbuilder:0.52
     build: .
     networks:
       - minha_rede
